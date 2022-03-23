@@ -35,8 +35,14 @@ const validateStep = (req, res, next) => {
 
 }
 
+const logger = (req, res, next) => {
+  console.log(`${req.method} request`)
+  next()
+}
+
 module.exports = {
   checkSchemeId,
   validateScheme,
   validateStep,
+  logger
 }
